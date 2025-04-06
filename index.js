@@ -4,6 +4,7 @@ let tasks = [];
 import { fetchTasks } from "./fetchTasks.js";
 import { addTask } from "./addTask.js";
 import { deleteTask } from "./deleteTask.js";
+import { registerUser } from "./registerUser.js";
 
 const modalContainer = document.getElementById("modalCreate");
 const createButton = document.getElementById("createButton");
@@ -46,14 +47,15 @@ function displayTasks() {
     li.appendChild(x);
     list.appendChild(li);
     list.appendChild(hr);
-
   });
 
   // delete task
   const deleteButton = document.querySelectorAll(".deleteButton");
 
   deleteButton.forEach((element) => {
-    element.addEventListener("click", (event) => deleteTask(event, tasks, API_URL, displayTasks));
+    element.addEventListener("click", (event) =>
+      deleteTask(event, tasks, API_URL, displayTasks)
+    );
   });
 
   console.log("Current tasks:", tasks);
