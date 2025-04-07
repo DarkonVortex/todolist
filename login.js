@@ -24,6 +24,14 @@ loginForm.addEventListener("submit", async function (event) {
 
     if (response.ok) {
       messageElement.textContent = result.message;
+
+       // Store JWT token and user info in localStorage
+       localStorage.setItem('token', result.token);
+       localStorage.setItem('user', JSON.stringify(result.user));
+       
+       // Redirect to the todo list page
+       window.location.href = "dashboard.html";
+       
     } else {
       messageElement.textContent = result.message;
     }

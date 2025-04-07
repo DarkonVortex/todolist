@@ -73,6 +73,7 @@ input {
 .ulList li {
   display: flex;
   margin: 15px 0;
+  align-items: center;
 }
 
 .ulList li > div.material-icons {
@@ -102,4 +103,8 @@ input {
   min-height: 200px;
   border: none;
   outline: none;
+}
+
+.task-checkbox {
+  margin-right: 15px;
 }

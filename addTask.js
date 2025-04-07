@@ -4,10 +4,14 @@ export async function addTask(newTask, tasks, API_URL, modalContainer, displayTa
   
       try {
         let response = await fetch(API_URL, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(taskData),
-          });
+          method: "POST",
+          headers: { 
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${localStorage.getItem('token')}`
+          },
+          body: JSON.stringify(taskData),
+        });
+  
     
           if (!response) throw new Error("Error adding task")
       
